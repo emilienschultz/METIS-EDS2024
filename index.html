@@ -379,7 +379,7 @@
 <h2>Aller vers l’analyse</h2>
 <p>Différentes <em>philosophies</em> avec leurs avantages/inconvénients</p>
 <ul>
-<li><p>“<strong>pipeline automatisé dédiés</strong>” : usage de logiciels spécialisés avec un processus (VosViewer, Iramuteq, …)</p></li>
+<li><p>“<strong>pipelines automatisés dédiés</strong>” : usage de logiciels spécialisés avec un processus (VosViewer, Iramuteq, …)</p></li>
 <li><p>“<strong>logiciels métiers</strong>” : un cadre général pour faire des analyses (boite à outils) (Jamovi, QGis, …)</p></li>
 <li><p>“<strong>à la main</strong>” : manipulation (quasi) directe des données (Excel, codage manuel, …)</p></li>
 <li><p>“<strong>programmation</strong>” : scripts de traitement de données (Python, R)</p></li>
@@ -388,14 +388,16 @@
 <section id="étapes-générales-dun-processus-danalyse" class="slide level2">
 <h2>Étapes générales d’un processus d’analyse</h2>
 <ul>
-<li>D’abord, un ensemble de données brutes</li>
-<li>Ensuite, des transformations de données
+<li>D’abord, un ensemble de données <strong>brutes</strong></li>
+<li>Ensuite, des <strong>transformations</strong> de données
 <ul>
-<li>des données intermédiaires</li>
-<li>des analyses intermédiaires</li>
+<li>Données/analyses intermédiaires</li>
 </ul></li>
-<li>Progressivement, une stabilisation d’analyses</li>
-<li>Production des résultats finaux</li>
+<li>Progressivement, <strong>stabilisation</strong> d’analyses
+<ul>
+<li>Laisser de côté des pistes</li>
+</ul></li>
+<li>Résultats finaux</li>
 </ul>
 </section>
 <section id="une-notion-centrale-la-reproductibilité" class="slide level2">
@@ -407,15 +409,18 @@
 </figure>
 </div>
 </section>
-<section id="un-idéal-régulateur" class="slide level2">
-<h2>Un idéal régulateur</h2>
+<section id="un-idéal-régulateur-de-la-science-ouverte" class="slide level2">
+<h2>Un idéal régulateur de la science ouverte</h2>
 <ul>
-<li>A minima : les documenter
+<li>A minima : <strong>documenter</strong>
 <ul>
 <li>Carnet de recherche</li>
 </ul></li>
-<li>A maxima : créer des outils pour refaire ces étapes</li>
-<li>Entre : se faciliter la vie
+<li>A maxima : <strong>formaliser les étapes</strong>
+<ul>
+<li>Pouvoir tout rejouer</li>
+</ul></li>
+<li>Entre :
 <ul>
 <li>Conserver les étapes intermédiaires</li>
 <li>Ne pas supprimer les étapes précédentes</li>
@@ -454,20 +459,6 @@
 </div>
 </div>
 </section>
-<section id="lanalyse-commence-avec-les-données" class="slide level2">
-<h2>L’analyse commence avec les données</h2>
-<p><strong>Une partie de l’analyse est au niveau des données</strong></p>
-<ul>
-<li>Sélectionner/filtrer le corpus</li>
-<li>Transformer les données
-<ul>
-<li>Recoder</li>
-<li>Compléter</li>
-<li>Fusionner</li>
-<li>Supprimer</li>
-</ul></li>
-</ul>
-</section>
 <section>
 <section id="analyse-scientométrique" class="title-slide slide level1 center">
 <h1>Analyse scientométrique</h1>
@@ -490,12 +481,27 @@
 </section>
 <section id="quelles-questions-poser-à-partir-dun-corpus-scientométrique" class="slide level2">
 <h2>Quelles questions poser à partir d’un corpus scientométrique?</h2>
-<p>Étudier la production des connaissances et les dynamiques d’expertise.</p>
+<p>Au sens large : production des connaissances et les dynamiques d’expertise.</p>
 <ul>
 <li>Quelles sont les thématiques abordées ?</li>
 <li>Qui sont les auteurs ? Comment sont-ils reliés entre eux ? Est-ce qu’ils forment une communauté ?</li>
 <li>Comment les sujets sont connectés ? Comment ils ont évolués dans le temps ?</li>
 <li>Quels sont les articles les plus importants ? Les plus centraux ?</li>
+<li>…</li>
+</ul>
+</section>
+<section id="lanalyse-commence-avec-les-données" class="slide level2">
+<h2>L’analyse commence avec les données</h2>
+<p><strong>Une partie de l’analyse est au niveau des données</strong></p>
+<ul>
+<li>Sélectionner/filtrer le corpus</li>
+<li>Transformer les données
+<ul>
+<li>Recoder</li>
+<li>Compléter</li>
+<li>Fusionner</li>
+<li>Supprimer</li>
+</ul></li>
 </ul>
 </section>
 <section id="constituer-le-corpus-avec-scopus" class="slide level2">
@@ -537,19 +543,19 @@
 </div>
 <p><a href="https://www.vosviewer.com/getting-started">De nombreux tutoriaux</a></p>
 </section>
-<section id="deux-mots-sur-lanalyse-de-réseau" class="slide level2">
-<h2>Deux mots sur l’analyse de réseau</h2>
+<section id="deux-mots-sur-lanalyse-de-réseaux" class="slide level2">
+<h2>Deux mots sur l’analyse de réseaux</h2>
 <ul>
 <li>des <strong>entités</strong> qui sont <strong>connectées</strong>
 <ul>
-<li>des noeuds (personnes, mots, etc.)</li>
-<li>des liens/relations (proche, contenu, etc.)</li>
+<li>des <strong>noeuds</strong> (personnes, mots, etc.)</li>
+<li>des <strong>liens/relations</strong> (proche, contenu, etc.)</li>
 </ul></li>
 <li>en mettant toutes ces relations ensemble : un <strong>réseau</strong></li>
 <li>permet de poser la question:
 <ul>
-<li>comment sont liées les entités ?</li>
 <li>quelle forme générale a ce réseau ?</li>
+<li>comment sont liées les entités ?</li>
 <li>est-ce que les entités sont proches ou éloignées ?</li>
 </ul></li>
 </ul>
@@ -587,6 +593,7 @@
 </div>
 </div>
 </div>
+<p>Lançons VOSVIEWER !</p>
 </section>
 <section id="avoir-une-vision-chronologique" class="slide level2">
 <h2>Avoir une vision chronologique</h2>
@@ -601,9 +608,9 @@
 <ul>
 <li>Importance de comprendre les métriques :
 <ul>
-<li>Que représente la couleur</li>
-<li>Que représente la taille</li>
-<li>Qu’est-ce qu’est un lien</li>
+<li>Que représente la couleur ?</li>
+<li>Que représente la taille ?</li>
+<li>Qu’est-ce qu’est un lien ?</li>
 </ul></li>
 <li>Ne pas hésiter si besoin à créer plusieurs corpus</li>
 <li>Possibilité d’aller plus loin
@@ -644,7 +651,7 @@
 <section id="un-cadre-méthodologique-à-développer" class="slide level2">
 <h2>Un cadre méthodologique à développer</h2>
 <p>Comment passer du texte à des données structurées ?</p>
-<p>Du genre :</p>
+<p><a href="https://www.researchgate.net/publication/344083798_Cycling_the_city_Representation_in_the_French_media">Lipovsky, Caroline. “Cycling the city: Representation in the French media.” Language, Context and Text 2.2 (2020): 334-367.</a></p>
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="./img/cycling1.png" class="quarto-figure quarto-figure-center" height="300"></p>
@@ -663,7 +670,6 @@
 <p><strong>Représentations des cyclistes dans la presse</strong></p>
 </div>
 <div class="callout-content">
-<p><a href="https://www.researchgate.net/publication/344083798_Cycling_the_city_Representation_in_the_French_media">Lipovsky, Caroline. “Cycling the city: Representation in the French media.” Language, Context and Text 2.2 (2020): 334-367.</a></p>
 <p>Est-ce que ça a changé ces 4 dernières années ? Comment parle-t-on des cyclistes dans la presse ? Est-ce qu’on parle davantage des violences que subissent les cyclistes ? Est-ce qu’on parle des inégalités liées au vélo ?</p>
 <p>Choix d’une question : comment couvre-t-on les accidents ?</p>
 </div>
@@ -891,21 +897,27 @@
 <section id="tableau-des-extraits-parlant-daccidents" class="slide level2">
 <h2>Tableau des extraits parlant d’accidents</h2>
 <ul>
-<li>Toutes les phrases mentionnant
+<li>Toutes les phrases mentionnant un terme
 <ul>
 <li>cycliste (une regex simple)</li>
 </ul></li>
-<li>garder une phrase avant et une phrase après</li>
-<li>coder</li>
+<li>Garder une phrase avant et une phrase après
+<ul>
+<li>Avoir du contexte</li>
+</ul></li>
+<li>Lire et coder chaque élément</li>
 </ul>
 </section>
 <section id="coder-collaborativement" class="slide level2">
 <h2>Coder (collaborativement)</h2>
 <p>En pratique :</p>
 <ul>
-<li>Document partagé Spreadsheet</li>
+<li>Un document partagé Spreadsheet</li>
 <li>Se mettre d’accord sur les règles</li>
-<li>Faire un test sur un petit nombre d’éléments avant de se lancer</li>
+<li>Faire un test sur un petit nombre d’éléments avant de se lancer
+<ul>
+<li>Ajuster</li>
+</ul></li>
 <li>Si un doute, prendre des notes dans une colonne dédiée</li>
 </ul>
 <p><strong>Faisons un peu de codage</strong></p>
