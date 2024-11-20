@@ -1,0 +1,503 @@
+---
+title: "Exploration des savoirs"
+subtitle: "Analyser les données"
+author: "Émilien Schultz - Nicolas Benvegnu"
+format: 
+    revealjs:
+        slide-number: true
+        fontsize: 25pt
+    # pdf:
+    #     slide-number: true
+    #     fontsize: 12pt
+
+---
+
+## Objectifs de la séance
+
+- Passer des données à des résultats
+- Discuter de la qualité d'un résultat
+- Intégration dans la réflexion
+
+Concrètement, dans 2 semaines : les *avancements intermédiaires*
+
+- délimitation d’un corpus
+- démarche pour l’analyse
+
+## Petit rappel de l'importance des données
+
+- Un des piliers de l'enquête
+- Intervenir à différents moments
+    - Explorer
+    - Prouver
+    - Renforcer
+
+**Vous en avez fait quoi pour le moment ?**
+
+## Renforcer : l'importance de la triangulation
+
+*La triangulation : examiner sous plusieurs angles conceptuels, sources de données ou méthodes*
+
+
+**Objectif : Renforcer la validité**
+
+- Observations directes + témoignages (entretiens)
+- Entretiens + mesures
+- Médias traditionnels + médias sociaux
+- ...
+
+
+## Aller vers l'analyse
+
+Différentes *philosophies* avec leurs avantages/inconvénients
+
+- "**pipelines automatisés dédiés**" : usage de logiciels spécialisés avec un processus (VosViewer, Iramuteq,  ...)
+- "**logiciels métiers**" : un cadre général pour faire des analyses (boite à outils) (Jamovi, QGis, ...)
+- "**à la main**" : manipulation (quasi) directe des données (Excel, codage manuel, ...)
+
+- "**programmation**" : scripts de traitement de données (Python, R)
+
+## Étapes générales d'un processus d'analyse
+
+- D'abord, un ensemble de données **brutes**
+- Ensuite, des **transformations** de données
+    - Données/analyses intermédiaires
+- Progressivement, **stabilisation** d'analyses
+    - Laisser de côté des pistes
+- Résultats finaux
+
+## Une notion centrale : la reproductibilité
+
+*Etre capable de refaire le plus simplement possible toutes les étapes (souvent très itératives) entre l'idée et les résultats*
+
+![](./img/reproducibility.jpg){height="500px" fig-align="center"}
+
+## Un idéal régulateur de la science ouverte
+
+- A minima : **documenter**
+    - Carnet de recherche
+- A maxima : **formaliser les étapes**
+    - Pouvoir tout rejouer
+- Entre :
+    - Conserver les étapes intermédiaires
+    - Ne pas supprimer les étapes précédentes
+
+
+
+## Aujourd'hui deux focus :
+
+- Pipeline automatisé de données scientométriques
+    - VosViewer
+- Analyse des données de presse "à la main"
+    - Grille de codage + Tableur (Spreadsheat Google)
+
+::: {.callout-note title="Retour des vélos"}
+Corpus sur le traitement de la question vélo: 
+
+- Scopus : qui sont les chercheurs qui travaillent sur ces questions ?
+- Europresse : comment est couverte l'accidentologie ?
+:::
+
+
+
+# Analyse scientométrique
+
+## Données scientométriques
+
+- Des données complexes
+    - Mots-clés, auteurs, affiliations, contenu, ...
+- Des données structurées
+    - Scopus permet de générer un fichier propre
+- Un domaine à part entière : la *scientométrie*
+
+Conséquence : des outils *calibrés* (métriques, manières de faire, etc.)
+
+## Quelles questions poser à partir d'un corpus scientométrique? 
+
+Au sens large : production des connaissances et les dynamiques d'expertise.
+
+- Quelles sont les thématiques abordées ?
+- Qui sont les auteurs ? Comment sont-ils reliés entre eux ? Est-ce qu'ils forment une communauté ?
+- Comment les sujets sont connectés ? Comment ils ont évolués dans le temps ?
+- Quels sont les articles les plus importants ? Les plus centraux ? 
+- ...
+
+## L'analyse commence avec les données
+
+**Une partie de l'analyse est au niveau des données**
+
+- Sélectionner/filtrer le corpus
+- Transformer les données
+    - Recoder
+    - Compléter
+    - Fusionner
+    - Supprimer
+
+## Constituer le corpus avec Scopus
+
+- Bien calibrer la question
+- Taille raisonnable
+- Vérifier en lisant quelques articles
+- Faire évoluer si besoin les règles de filtrage
+- Garder une trace de la requête
+- Choisir un format d'export pertinent (CSV est bien)
+
+::: {.callout-note title="Comment la science parle des vélos"}
+- `( bike* OR cyclist* )` > 20000
+- `( bike* OR cyclist* ) AND france` = 352
+:::
+
+
+## VOSViewer : réseaux & statistiques
+
+Un outil dédié issu de la recherche
+
+![](./img/vosviewer.png){height="500px" fig-align="center"}
+
+[De nombreux tutoriaux](https://www.vosviewer.com/getting-started)
+
+## Deux mots sur l'analyse de réseaux
+
+- des **entités** qui sont **connectées**
+    - des **noeuds** (personnes, mots, etc.)
+    - des **liens/relations** (proche, contenu, etc.)
+- en mettant toutes ces relations ensemble : un **réseau**
+- permet de poser la question: 
+    - quelle forme générale a ce réseau ?
+    - comment sont liées les entités ?
+    - est-ce que les entités sont proches ou éloignées ?
+
+[L'analyse de réseaux en sciences sociales de L. Beauguitte](https://geographie-cites.cnrs.fr/lanalyse-de-reseau-en-sciences-sociales-petit-guide-pratique/)
+
+
+
+## Démo : analyser un corpus
+
+::: {.callout-note title="Est-ce qu'il existe une communauté de chercheurs spécialisée sur le vélo en France ?"}
+:::
+
+::: {.callout-note title="Quelles sont les références les plus mentionnées ?"}
+:::
+
+Lançons VOSVIEWER !
+
+## Avoir une vision chronologique
+
+![](./img/reseau.png){height="500px" fig-align="center"}
+
+## Remarques
+
+- Importance de comprendre les métriques :
+  - Que représente la couleur ?
+  - Que représente la taille ?
+  - Qu'est-ce qu'est un lien ?
+- Ne pas hésiter si besoin à créer plusieurs corpus
+- Possibilité d'aller plus loin
+    - Extraire les éléments non pertinents
+    - [Thesaurus pour réunir](https://www.vosviewer.com/documentation/Manual_VOSviewer_1.6.8.pdf)
+
+## Les limites
+
+- Pas mal de possibilités
+- Mais sur des données bien calibrées
+- Et des marges de manoeuvre limitées
+
+**Comment faire quand on veut construire son propre cadre d'analyse ?**
+
+# Analyse de presse
+
+## Presse : des données moins structurées
+
+- Des méta-informations (journal, etc.)
+- Du texte
+
+Des questions souvent liées au contenu
+
+- Quels sujets sont traités ?
+- Comment ils évoluent ?
+- Qui est mentionné ?
+
+Mais pas seulement (Combien d'articles sur un sujet sur une période, etc.)
+
+## Un cadre méthodologique à développer
+
+Comment passer du texte à des données structurées ?
+
+[Lipovsky, Caroline. "Cycling the city: Representation in the French media." Language, Context and Text 2.2 (2020): 334-367.](https://www.researchgate.net/publication/344083798_Cycling_the_city_Representation_in_the_French_media)
+
+![](./img/cycling1.png){height="300px" fig-align="center"}
+
+
+## Analyse de cadrage médiatique
+
+::: {.callout-note title="Représentations des cyclistes dans la presse"}
+
+
+Est-ce que ça a changé ces 4 dernières années ? Comment parle-t-on des cyclistes dans la presse ? Est-ce qu'on parle davantage des violences que subissent les cyclistes ? Est-ce qu'on parle des inégalités liées au vélo ?
+
+Choix d'une question : comment couvre-t-on les accidents ?
+:::
+
+
+## D'abord, il faut des concepts
+
+Articulés à une problématique
+
+![](./img/cycling2.png){height="400px" fig-align="center"}
+
+## Ensuite, une opérationnalisation
+
+Le *codebook* : adosser chaque catégorie à une définition
+
+- Explicite
+- Opérationnelle
+- Simple
+
+Toujours plus facile à dire qu'à faire...
+
+## Différentes stratégies pour l'analyse de texte
+
+Et ensuite une implémentation
+
+- Dictionnaire de mots à détecter automatiquement
+- Découper le texte en élément et les catégoriser
+- Identifier des éléments dans le texte
+- LLM ...
+
+(Les différents éléments peuvent être combinés)
+
+## Un flux de travail
+
+1. Lire pour connaître ses données
+2. Développer une grille de codage :
+    - **Cible** : article entier ? paragraphe ? phrase contenant certains mots ?
+    - **Codage** : catégories et des règles pour les appliquer
+3. Produire un tableau (excel ou autre) adapté
+    - Filtrer son corpus
+4. Coder une dizaine d'éléments pour vérifier que la grille fonctionne
+    - Faire évoluer la grille de codage si besoin
+5. Coder l'ensemble du corpus
+6. Faire des statistiques (comptage, ou plus si affinité)
+
+## Remarques sur le codage
+
+- Il y a toujours des cas ambigus, c'est normal
+- Ajouter une colonne pour garder des commentaires
+- Toujours garder une possibilité de revenir à l'article initial
+    - Surtout si l'unité de travail est plus petite
+- Possibilité d'avoir des codages complexes :
+    - Plusieurs dimensions
+    - Dimension qui code l'intensité/la certitude
+
+## Mettons nous à l'oeuvre
+
+**D'abord le corpus**
+
+Requête europresse :
+
+ - accident & vélo* | cycliste*
+ - sur toute la france
+ - sur une période (se poser la question du volume)
+
+Télécharger les données : un fichier HTML
+
+
+## Consolider le corpus
+
+Passer d'un fichier HTML à un tableau manipulable : [https://dstool.onrender.com/](https://dstool.onrender.com/)
+
+::: {.callout-tip title="Outils disponibles"}
+
+- Transformer le corpus
+- Produire un graphique
+- Extraire des phrases autour de mots clés
+:::
+
+Puis à la main
+
+- Enlever les entrées non pertinentes
+- Enlever les doublons
+- Enlever les colonnes inutiles
+
+*un fichier clean.xlsx*
+
+## Décrire le corpus
+
+- Statistiques de colonnes
+    - Colonne journal : plein de soucis
+        - Dupliquer la colonne
+        - Corriger à la main (rechercher/remplacer)
+- Et souvent des données sales : il faut transformer les données
+    - A la main
+        - Long
+    - Solution des macros
+        - Complexe
+    - Des outils adapté : programmation/[OpenRefine](https://openrefine.org/)
+
+## Ajouter une dimension/variable
+
+*Principe : transformer le texte en une nouvelle variable (présence d'un acteur, tonalité, nombre de mots, nombre d'occurence d'un terme, etc.)*
+
+- Permettre de compter les occurences
+- De croiser avec d'autres éléments
+    - Journal
+    - Date
+    - Autre variable
+
+**Comment faire?** Cas d'un codage du traitement des accidents
+
+## Définir la grille de codage
+
+- Définir les variables le plus clairement possible
+- Avoir des exemples
+- Identifier l'échelle
+
+::: {.callout-note title="Variables sur les accidents vélo à Paris"}
+- Variable : accident & vélo
+    - Cycliste victime
+    - Ambigu
+    - Cycliste responsable
+    - Ne parle pas d'accident
+- A l'échelle de la phrase
+:::
+
+## Du texte à la phrase
+
+*Je veux m'intéresser aux phrases spécifiques*
+
+Article entier > phrases spécifiques
+
+- présence de mots/combinaisons de mots
+- phrase, groupe de phrases, etc.
+
+::: {.callout-tip title="Extraire des phrases"}
+Outil sur dstool à partir de **regex**
+:::
+
+## C'est quoi une expression régulière
+
+Regex = expression régulière -> un pattern de texte
+
+Exemples :
+
+- vélo : présence de la chaîne vélo
+- vélo|Vélo : l'un ou l'autre
+- \\b\\w{5}\\b : mot de 5 lettres
+- \\b(chat|chien)\\b : mots "chat" ou "chien" dans un texte
+- \\w+@\\w+\\.\\w+ : adresse mail
+- \\d{2}/\\d{2}/\\d{4} : date
+
+*Présent dans de nombreux logiciels/langages de programmation*
+
+
+## Tableau des extraits parlant d'accidents
+
+- Toutes les phrases mentionnant un terme
+    - cycliste (une regex simple)
+- Garder une phrase avant et une phrase après
+    - Avoir du contexte
+- Lire et coder chaque élément
+
+## Coder (collaborativement)
+
+En pratique :
+
+- Un document partagé Spreadsheet
+- Se mettre d'accord sur les règles
+- Faire un test sur un petit nombre d'éléments avant de se lancer
+    - Ajuster
+- Si un doute, prendre des notes dans une colonne dédiée
+
+**Faisons un peu de codage**
+
+## Données codées
+
+![](./img/tabcode.png){height="400px" fig-align="center"}
+
+## Analyser
+
+Beaucoup d'options disponibles avec les tableurs :
+
+- Distribution (fréquence absolue, %)
+    - Statistiques de colonnes
+- Tableaux croisés dynamiques
+    - Insertion > Tableau dynamique
+- Graphiques
+    - Insertion > Graphique
+
+**Réussir à avoir un graphique cohérent signifie avoir construit les données adaptées**
+
+::: {.callout-tip title="Outil"}
+Une fois le codage réalisé, utiliser l'outil en ligne pour avoir l'évolution
+:::
+
+## Commencer par des analyses simples
+
+![](./img/graph.png){height="400px" fig-align="center"}
+
+## Evolution temporelle avec dstool
+
+![](./img/courbetemporel.png){height="400px" fig-align="center"}
+
+## D'autres stratégies d'analyse des données de presse
+
+- Évolutions temporelles de plusieurs sous-corpus
+    - entre journaux, entre périodes
+- Détection de mots/comptage avec les macro excel
+- Identifier des entités spécifiques
+    - Remplacer par un token (par exemple : Le premier ministre, le PM, XXX par [ministre])
+
+## Et pour les entretiens ?
+
+- Entretiens == du texte
+- Démarche similaire
+    - Mais un corpus pas encore constitué
+
+Donc :
+
+- Construire vous-même un tableau
+    - une ligne par entretien, une colonne par info
+    - ajouter les variables d'intérêt
+    - **bien normaliser**
+
+# Encore plus de solutions
+
+## De nombreux logiciels
+
+- Nettoyer des données avec [OpenRefine](https://openrefine.org/)
+- Statistiques avec [Jamovi](https://www.jamovi.org/)
+- Analyse textuelle avec [Iramuteq](http://www.iramuteq.org/)
+- Faire des cartes avec [khartis](https://www.sciencespo.fr/cartographie/khartis/) ou [Google Maps](https://programminghistorian.org/en/lessons/googlemaps-googleearth)
+- Analyse des entités dans les textes avec [Cortext](https://managerv2.cortext.net/)
+
+## Les possibilités de la programmation
+
+Par exemple faire un beau graphique (R ou Python)
+
+- Données bien structurée
+- Réflexion sur les objectifs
+- Réaliser ensemble
+
+::: {.callout-tip title="Puissance des LLM"}
+
+Faire tourner un LLM localement (ollama) ou utiliser une API et des scripts pour faire les requêtes avec des prompts.
+
+:::
+
+# La suite ?
+
+## Mettre en oeuvre
+
+- Approches vues aujourd'hui sur votre sujet
+- Réfléchir éventuellement à des approches plus spécifiques
+
+Mot d'ordre : **intégrer** l'analyse à la problématique dans le dossier d'avancement (quitte à restreindre l'ambition).
+
+<!--
+TODO :
+
+AJOUTER SLIDE RESULTAT + SLIDE LLM
+
+- recoder les journaux ? aller vers un graphique
+- vérifier l'outil
+- https://dashboard.render.com/web/srv-cji9ivb37aks73eiaag0/deploys/dep-csrlrfhu0jms7392njfg
+-->
