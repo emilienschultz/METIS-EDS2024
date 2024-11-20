@@ -1,0 +1,2 @@
+- le 4/11/2024 ( bike* OR cyclist* ) AND france , fichier scopus04112024.csv
+- le 15/11/2024 accident & (vélo* | cycliste*), presse française, sur 30 jours, europresse15112024.csv
